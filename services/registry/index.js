@@ -13,7 +13,7 @@ exports.register = function Registry (service, options, next) {
   service.method([
     {
       name: 'registry.getBrowseData',
-      fn: require('./methods/browse'),
+      fn: require('./methods/getBrowseData'),
       options: { cache: setCache('browse', 10) }
     },
     {
