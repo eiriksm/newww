@@ -123,7 +123,7 @@ function urlPolicy (pkgData) {
         protocol: v.protocol,
         host: v.host,
         pathname: v.pathname,
-        query: u.query_,
+        search: u.query_,
         hash: u.fragment_
       }
     } else {
@@ -131,7 +131,7 @@ function urlPolicy (pkgData) {
         protocol: u.scheme_ + ':',
         host: u.domain_ + (u.port_ ? ':' + u.port_ : ''),
         pathname: u.path_,
-        query: u.query_,
+        search: u.query_,
         hash: u.fragment_
       }
     }

@@ -101,6 +101,13 @@ describe('Modifying the package before sending to the template', function () {
     done();
   });
 
+  it('preserves query parameters in URLs when making them into links', function (done) {
+    expect(p.readmeSrc).to.include("watch?v=dQw4w9WgXcQ");
+    var $ = cheerio.load(p.readme);
+    expect($("a[href*='youtube.com']").attr('href')).to.equal('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    done();
+  });
+
   it('includes the dependencies', function (done) {
     expect(p.dependencies).to.exist;
     done();
